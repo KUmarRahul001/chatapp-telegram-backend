@@ -40,6 +40,15 @@ application.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), messag
 def run_telegram_bot():
     asyncio.run(application.run_polling())
 
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "status": "running",
+        "message": "Telegram OTP API is live!",
+        "available_endpoints": ["/register", "/send_otp", "/verify_otp"]
+    })
+    
 @app.route("/send_otp", methods=["POST"])
 def send_otp():
     data = request.json
