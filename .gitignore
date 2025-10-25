@@ -1,9 +1,14 @@
 .env
-env/
 venv/
+env/
 __pycache__/
 *.pyc
-.idea/
 *.log
+.idea/
 .DS_Store
-Thumbs.db
+*.sqlite3
+*.env
+*.pot
+*.mo
+node_modules/
+dist/
